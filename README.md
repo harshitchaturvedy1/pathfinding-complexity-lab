@@ -1,14 +1,14 @@
-# Pathfinding Complexity Lab
+# pathfinding-complexity-lab
 
 > **An execution-accurate pathfinding visualizer and benchmarking suite that decouples pure O(V log V) algorithm performance from UI rendering delays.**
 
-[![CI Pipeline](https://img.shields.io/github/actions/workflow/status/harshitchaturvedy1/pathfinding-complexity-lab/ci.yml?branch=main&style=flat-square&label=tests)](https://github.com/harshitchaturvedy1/pathfinding-complexity-lab/)
+[![CI Pipeline](https://img.shields.io/github/actions/workflow/status/harshitchaturvedy1/pathfinding-complexity-lab/ci.yml?branch=main&style=flat-square&label=tests)](https://github.com/harshitchaturvedy1/pathfinding-complexity-lab)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 
 Most online visualizers are purely cosmetic. They use arbitrary `setTimeout` delays or native JavaScript arrays (`Array.prototype.sort()`) instead of binary heaps, corrupting step counts and execution timings.
 
-**PathfindBench** runs pure algorithmic passes synchronously using `performance.now()` before queuing state snapshots into ES6 Generators. This guarantees benchmark-accurate complexity metrics (microseconds, nodes expanded, effective branching factor) regardless of animation speed or canvas frame rates.
+**pathfinding-complexity-lab** runs pure algorithmic passes synchronously using `performance.now()` before queuing state snapshots into ES6 Generators. This guarantees benchmark-accurate complexity metrics (microseconds, nodes expanded, effective branching factor) regardless of animation speed or canvas frame rates.
 
 ---
 
@@ -28,8 +28,8 @@ Most online visualizers are purely cosmetic. They use arbitrary `setTimeout` del
 
 ```bash
 # Clone the repository
-git clone [https://github.com/your-username/pathfind-bench.git](https://github.com/your-username/pathfind-bench.git)
-cd pathfind-bench
+git clone [https://github.com/harshitchaturvedy1/pathfinding-complexity-lab.git](https://github.com/harshitchaturvedy1/pathfinding-complexity-lab.git)
+cd pathfinding-complexity-lab
 
 # Install dependencies
 npm install
@@ -85,7 +85,7 @@ To quantify heuristic pruning efficiency independently of graph layout, we solve
 $$N + 1 = 1 + b^* + (b^*)^2 + \dots + (b^*)^d = \frac{(b^*)^{d+1} - 1}{b^* - 1}$$
 Where N is total expanded nodes and d is path length. A value of b* approaching 1.0 represents a near-perfect heuristic that explores only the optimal path.
 Project Structure
-pathfind-bench/
+pathfinding-complexity-lab/
 ├── .github/workflows/          # CI pipeline configs
 ├── src/
 │   ├── algorithms/             # Heap, Dijkstra, A*, JPS, Heuristics
