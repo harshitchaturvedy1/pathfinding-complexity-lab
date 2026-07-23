@@ -1,0 +1,21 @@
+{
+  "name": "pathfinding-benchmarker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pathfinding Algorithm Visualizer & Complexity Benchmarking Engine",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint \"src/**/*.js\" \"tests/**/*.js\""
+  },
+  "devDependencies": {
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4"
+  }
+}

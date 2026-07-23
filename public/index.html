@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pathfinding Visualizer &amp; Complexity Benchmarker</title>
+    <meta
+      name="description"
+      content="Compare Dijkstra and A* on identical maps with isolated, µs-level complexity metrics. Built for accurate CS benchmarking."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <!-- Three.js loaded as a UMD global so Mesh3D can pick it up lazily. -->
+    <script src="https://unpkg.com/three@0.169.0/build/three.min.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1 class="app-title">
+          <span class="logo" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="background:transparent">
+              <circle cx="6" cy="6" r="2.5" fill="#0b1020"></circle>
+              <circle cx="18" cy="18" r="2.5" fill="#0b1020"></circle>
+              <path d="M8 8 L13 13"></path>
+              <path d="M13 13 Q16 10 16 16"></path>
+              <path d="M16 16 L18 18" stroke-dasharray="2 2"></path>
+            </svg>
+          </span>
+          <span>
+            Pathfinding Visualizer &amp; Complexity Benchmarker
+            <small>Dijkstra · A* · Weighted A* &nbsp;—&nbsp; accurate µs benchmarking</small>
+          </span>
+        </h1>
+        <div class="app-subtitle">
+          <kbd>Space</kbd>&nbsp;play/pause&nbsp;·&nbsp;<kbd>←</kbd><kbd>→</kbd>&nbsp;step&nbsp;·&nbsp;<kbd>R</kbd>&nbsp;run&nbsp;·&nbsp;<kbd>E</kbd>&nbsp;export
+        </div>
+      </header>
+
+      <div id="status-bar" role="status" aria-live="polite">
+        Pick a map and select <strong>Run</strong> to begin benchmarking — execution time is captured in <code>performance.now()</code> <em>before</em> any animation frame.
+      </div>
+
+      <main class="workspace">
+        <section class="canvas-stack" aria-label="Algorithm visualizers">
+          <article class="canvas-card" data-algo="dijkstra">
+            <div class="card-head">
+              <span class="algo-label"><span class="swatch"></span>Algorithm A · Dijkstra</span>
+              <span class="live-meta">expanded: <strong class="mp-live-a">0</strong></span>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="canvas-dijkstra"></canvas>
+            </div>
+            <div class="legend">
+              <span><i class="l-wall"></i>wall</span>
+              <span><i class="l-front"></i>frontier</span>
+              <span><i class="l-closed"></i>visited</span>
+              <span><i class="l-path"></i>path</span>
+              <span><i class="l-start"></i>start</span>
+              <span><i class="l-goal"></i>goal</span>
+            </div>
+          </article>
+          <article class="canvas-card" data-algo="astar">
+            <div class="card-head">
+              <span class="algo-label"><span class="swatch"></span>Algorithm B · A*</span>
+              <span class="live-meta">expanded: <strong class="mp-live-b">0</strong></span>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="canvas-astar"></canvas>
+            </div>
+            <div class="legend">
+              <span><i class="l-wall"></i>wall</span>
+              <span><i class="l-front"></i>frontier</span>
+              <span><i class="l-closed"></i>visited</span>
+              <span><i class="l-path"></i>path</span>
+              <span><i class="l-start"></i>start</span>
+              <span><i class="l-goal"></i>goal</span>
+            </div>
+          </article>
+        </section>
+
+        <aside class="sidepanel">
+          <div class="deck" role="region" aria-label="Run controls"></div>
+          <section class="metrics" id="metrics"></section>
+        </aside>
+      </main>
+
+      <footer class="app-footer">
+        <span>Pathfinding Benchmarker · v1.0</span>
+        <span class="kbd-hints">
+          <span><kbd>Space</kbd> Play/Pause</span>
+          <span><kbd>←</kbd><kbd>→</kbd> Step</span>
+          <span><kbd>R</kbd> Run</span>
+          <span><kbd>E</kbd> Export CSV</span>
+        </span>
+      </footer>
+    </div>
+
+    <!-- Inputs the Controls component reads via initial state lookup. -->
+    <input type="hidden" id="ctl-rows" value="30" />
+    <input type="hidden" id="ctl-cols" value="50" />
+
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
