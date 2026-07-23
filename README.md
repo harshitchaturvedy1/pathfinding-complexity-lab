@@ -1,4 +1,4 @@
-# PathfindBench
+# Pathfinding Complexity Lab
 
 > **An execution-accurate pathfinding visualizer and benchmarking suite that decouples pure O(V log V) algorithm performance from UI rendering delays.**
 
