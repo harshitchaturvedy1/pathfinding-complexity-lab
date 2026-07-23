@@ -6,7 +6,7 @@ A web-based visualizer and execution engine that compares pathfinding algorithms
 
 ---
 
-## ✨ Features
+## Features
 
 - **Side-by-side synchronized canvases**: Dijkstra vs A\* on the same map at the same step.
 - **Standardized priority queue**: a shared Binary Min-Heap class guarantees `O(log V)` operations for both algorithms.
@@ -48,7 +48,7 @@ npm run lint
 
 ---
 
-## 🗂️ Project Layout
+## Project Layout
 
 ```
 pathfinding-benchmarker/
@@ -137,7 +137,7 @@ where `N` is the number of expanded nodes and `d` is the path depth (search effo
 
 ---
 
-## ⚙️ Architecture
+## Architecture
 
 ```
 +-----------------------------------------------+
@@ -164,14 +164,14 @@ where `N` is the number of expanded nodes and `d` is the path depth (search effo
 
 ---
 
-## 🧪 Testing
+## Testing
 
 - `tests/minHeap.test.js` — push / pop / heap-sort ordering, sift correctness after random inserts.
 - `tests/pathfinding.test.js` — Dijkstra & A\* produce identical costs on weighted / unweighted grids, heuristics remain admissible, Weighted A\* trades cost for fewer expansions.
 
 ---
 
-## 📦 KPIs Shipped per Trial
+## KPIs Shipped per Trial
 
 - **Nodes Expanded (N)** — number of unique nodes popped from the heap.
 - **Path Cost (d)** — total step-weighted distance of the produced path.
@@ -180,13 +180,13 @@ where `N` is the number of expanded nodes and `d` is the path depth (search effo
 
 ---
 
-## 🌐 Browser Support
+## Browser Support
 
 Latest Chrome, Firefox, Safari, Edge. Requires support for `performance.now()`, JS Generators, and `requestAnimationFrame`.
 
 ---
 
-## 🧩 Algorithms
+## Algorithms
 
 | Name | Code | Topology | Optimality | Notes |
 |---|---|---|---|---|
@@ -196,7 +196,7 @@ Latest Chrome, Firefox, Safari, Edge. Requires support for `performance.now()`, 
 | Bidirectional A* | `bidir` | grid + graph | optimal (w=1) | anytime termination; restricted to consistent heuristic |
 | D* Lite (static) | `dstarlite` | grid + graph | optimal | canonical rhs/g/key heap; goal→start expansion |
 
-## 🎨 Visualizations
+## Visualizations
 
 | Mode | Renderer | Topology | Library |
 |---|---|---|---|
@@ -210,4 +210,4 @@ random-geometric, Watts–Strogatz small-world, and road-network grids.
 
 ----
 
-MIT © 2024 — Built for accurate CS benchmarking.
+MIT © 2026 — Built for accurate CS benchmarking.
