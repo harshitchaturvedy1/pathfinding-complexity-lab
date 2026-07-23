@@ -2,7 +2,6 @@
 
 > **An execution-accurate pathfinding visualizer and benchmarking suite that decouples pure O(V log V) algorithm performance from UI rendering delays.**
 
-[![CI Pipeline](https://img.shields.io/github/actions/workflow/status/harshitchaturvedy1/pathfinding-complexity-lab/ci.yml?branch=main&style=flat-square&label=tests)](https://github.com/harshitchaturvedy1/pathfinding-complexity-lab)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 
